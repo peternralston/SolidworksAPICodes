@@ -102,7 +102,7 @@ namespace Empire.Solidworks.NewApp
         private void LoadUi()
         {
             // Find location to our taskpan icon
-            var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", ""), "SolidworksAppBrain.png");
+            var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "SolidworksAppBrain.png");
             
             // Create our Taskpane
             mSolidworksApplication.CreateTaskpaneView2(imagePath, "Woo, My first SqAddin");
@@ -119,10 +119,24 @@ namespace Empire.Solidworks.NewApp
             //Remove taskpane view
             mTaskpaneView.DeleteView();
 
-            // Release COM Reeference and cleanup memory
+            // Release COM Reference and cleanup memory
             Marshal.ReleaseComObject(mTaskpaneView);
 
             mTaskpaneView = null;
+        }
+
+        #endregion
+
+        #region
+        [ComRegisterFunction()]
+        private static void ComRegister(Type t)
+        {
+            var keyPath = string.Format($"SOFTWARE/SolidWorks/AddIns/{0:b}", t.GUID);
+
+            using (var rk = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(keyPath))
+            {
+
+            }
         }
 
         #endregion

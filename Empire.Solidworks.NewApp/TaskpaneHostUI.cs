@@ -4,17 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Empire.Solidworks.NewApp
 {
+    [ProgId(TaskpaneIntegration.SWTASKPANE_PROGID)]
     public partial class TaskpaneHostUI : UserControl
     {
         public TaskpaneHostUI()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
