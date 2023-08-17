@@ -61,10 +61,10 @@ namespace Empire.Solidworks.NewApp
         public bool ConnectToSW(object ThisSW, int Cookie)
         {
             // Store a reference to the current SolidWorks instance
-           mSolidworksApplication = (SldWorks)ThisSW;
+            mSolidworksApplication = (SldWorks)ThisSW;
 
             // Store cookie Id
-           mSwCookie = Cookie;
+            mSwCookie = Cookie;
 
             // Setup Callback info
             var ok = mSolidworksApplication.SetAddinCallbackInfo2(0, this, mSwCookie);
@@ -103,7 +103,7 @@ namespace Empire.Solidworks.NewApp
         {
             // Find location to our taskpan icon
             var imagePath = Path.Combine(Path.GetDirectoryName(typeof(TaskpaneIntegration).Assembly.CodeBase).Replace(@"file:\", string.Empty), "SolidworksAppBrain.png");
-            
+
             // Create our Taskpane
             mSolidworksApplication.CreateTaskpaneView2(imagePath, "Woo, My first SqAddin");
             // @"C:\Program Files\Repo\SolidworksAPICodes\Referances\SolidworksAppBrain.png" in case we need to hard code the location
@@ -127,18 +127,42 @@ namespace Empire.Solidworks.NewApp
 
         #endregion
 
-        #region
+        #region COM Registration
+
+        /// <summary>
+        /// The COM Registration call to add our registry entries to the SolidWorks add-in registry
+        /// </summary>
+        /// <param name="t"></param>
+
         [ComRegisterFunction()]
         private static void ComRegister(Type t)
         {
             var keyPath = string.Format($"SOFTWARE/SolidWorks/AddIns/{0:b}", t.GUID);
 
+            // Create our registry folder for the add-in
             using (var rk = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(keyPath))
             {
+                // Load add-in when SolidWorks opens
+                rk.SetValue(null, 1);
 
+                // Set Solidworks add-in title and description 
+                rk.SetValue("Title", "My SwAddin");
+                rk.SetValue("Description", "All your pixels are belong to us!");
             }
         }
 
+        /// <summary>
+        /// The COM unregister call to remove our custom entries we added in the COM register function
+        /// </summary>
+        /// <param name="t"></param>
+        [ComUnregisterFunction()]
+        private static void ComUnregister(Type t)
+        {
+            var keyPath = string.Format(@"SOFTWARE/sOLIDwORKS/aDDiNS/{0:B}", t.GUID);
+
+            // Remove our registry entry
+            Microsoft.Win32.Registry.LocalMachine.DeleteSubKeyTree(keyPath);
+        }
         #endregion
     }
 }
