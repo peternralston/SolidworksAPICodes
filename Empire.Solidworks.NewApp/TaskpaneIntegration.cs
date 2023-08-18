@@ -166,4 +166,4 @@ namespace Empire.Solidworks.NewApp
         #endregion
     }
 }
-// removed a small change 36:37
+// a small change 39:15 

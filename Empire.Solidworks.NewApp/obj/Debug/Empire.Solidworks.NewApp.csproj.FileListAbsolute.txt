@@ -1,0 +1,8 @@
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\bin\Debug\Empire.Solidworks.NewApp.dll
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\bin\Debug\Empire.Solidworks.NewApp.pdb
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.csproj.AssemblyReference.cache
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.TaskpaneHostUI.resources
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.csproj.GenerateResource.cache
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.csproj.CoreCompileInputs.cache
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.dll
+C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\obj\Debug\Empire.Solidworks.NewApp.pdb
