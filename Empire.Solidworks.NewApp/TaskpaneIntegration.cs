@@ -170,3 +170,6 @@ namespace Empire.Solidworks.NewApp
 // RegAsm.exe /codebase "C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\bin\Debug\Empire.Solidworks.NewApp.dll"
 // May need to fix code before we can register the code
 
+// this is another change
+
+
