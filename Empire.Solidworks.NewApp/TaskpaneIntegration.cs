@@ -164,10 +164,6 @@ namespace Empire.Solidworks.NewApp
         #endregion
     }
 }
-// trying to regiester the .dll with RegAsm.exe copypasta cd c:\Windows\Microsoft.NET\Framework64\v4.0.30319
-// RegAsm.exe /codebase "C:\Program Files\Repo\SolidworksAPICodes\Empire.Solidworks.NewApp\bin\Debug\Empire.Solidworks.NewApp.dll"
-// May need to fix code before we can register the code
-
-// this is another change
+// Code has been registered with solidworks and is now installed on the task pane.
 
 
