@@ -164,6 +164,7 @@ namespace Empire.Solidworks.NewApp
         #endregion
     }
 }
-// Code has been registered with solidworks and is now installed on the task pane.
+// Missed commit yesterday. adding SolidDNA Next Week
+
 
 
